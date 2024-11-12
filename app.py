@@ -11,13 +11,12 @@ def htop():
     name = "Bhanu Prakash Sanikommu"  # Replace with your full name
     username = os.getenv("USER") or os.getenv("USERNAME") or "Unknown User"
     server_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
-    top_output = subprocess.check_output("top -b -n 1 | head -n 20", shell=True).decode()
+    top_output = subprocess.check_output("top -b -n 1 | head -n 30", shell=True).decode()
 
     # Generate HTML response
     response = f"""
     <html>
     <body>
-        <h1>System Info</h1>
         <p><strong>Name:</strong> {name}</p>
         <p><strong>User:</strong> {username}</p>
         <p><strong>Server Time (IST):</strong> {server_time}</p>
